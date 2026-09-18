@@ -1,0 +1,412 @@
+```html
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Cac san pham</title>
+
+    <style>
+
+        body {
+            font-family: Arial;
+        }
+
+        .sanpham {
+            margin: 20px 0;
+        }
+
+        .noidung {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            margin-top: 15px;
+        }
+
+        .anhsp {
+            width: 200px;
+            height: 200px;
+            object-fit: contain;
+        }
+
+        summary {
+            cursor: pointer;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 8px 15px;
+            cursor: pointer;
+        }
+
+        input, textarea, select {
+            margin-top: 5px;
+            margin-bottom: 10px;
+            padding: 8px;
+            width: 250px;
+        }
+
+        #loiCamOn {
+            font-size: 25px;
+            font-weight: bold;
+            animation: rgb 2s infinite;
+        }
+
+        @keyframes rgb {
+            0% {
+                color: red;
+            }
+
+            33% {
+                color: lime;
+            }
+
+            66% {
+                color: blue;
+            }
+
+            100% {
+                color: red;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+<h1>Cac san pham</h1>
+
+
+<!-- AULA WIN 60HE -->
+
+<div class="sanpham">
+
+    <details>
+
+        <summary style="color: #ff0000;">
+            Aula Win 60HE
+        </summary>
+
+        <div class="noidung">
+
+            <div>
+
+                <p>Ban phim Aula Win 60HE</p>
+
+                <button onclick="moDatHang()">
+                    Dat hang
+                </button>
+
+            </div>
+
+            <img
+                src="images.jpeg"
+                class="anhsp"
+            >
+
+        </div>
+
+    </details>
+
+</div>
+
+
+<!-- ATK A9SE -->
+
+<div class="sanpham">
+
+    <details>
+
+        <summary style="color: #ff6600;">
+            ATK A9SE
+        </summary>
+
+        <div class="noidung">
+
+            <div>
+
+                <p>Chuot ATK A9SE</p>
+
+                <button onclick="moDatHang()">
+                    Dat hang
+                </button>
+
+            </div>
+
+            <img
+                src="images (4).jpeg"
+                class="anhsp"
+            >
+
+        </div>
+
+    </details>
+
+</div>
+
+
+<!-- MAD 60HE -->
+
+<div class="sanpham">
+
+    <details>
+
+        <summary style="color: #ffff00;">
+            MAD 60HE
+        </summary>
+
+        <div class="noidung">
+
+            <div>
+
+                <p>Ban phim MAD 60HE</p>
+
+                <button onclick="moDatHang()">
+                    Dat hang
+                </button>
+
+            </div>
+
+            <img
+                src="images (2).jpeg"
+                class="anhsp"
+            >
+
+        </div>
+
+    </details>
+
+</div>
+
+
+<!-- AULA F75 -->
+
+<div class="sanpham">
+
+    <details>
+
+        <summary style="color: #ff00ff;">
+            Aula F75
+        </summary>
+
+        <div class="noidung">
+
+            <div>
+
+                <p>Ban phim Aula F75</p>
+
+                <button onclick="moDatHang()">
+                    Dat hang
+                </button>
+
+            </div>
+
+            <img
+                src="images (1).jpeg"
+                class="anhsp"
+            >
+
+        </div>
+
+    </details>
+
+</div>
+
+
+<!-- AULA 68HE -->
+
+<div class="sanpham">
+
+    <details>
+
+        <summary style="color: #00aaff;">
+            Aula 68HE
+        </summary>
+
+        <div class="noidung">
+
+            <div>
+
+                <p>Ban phim Aula 68HE</p>
+
+                <button onclick="moDatHang()">
+                    Dat hang
+                </button>
+
+            </div>
+
+            <img
+                src="images (3).jpeg"
+                class="anhsp"
+            >
+
+        </div>
+
+    </details>
+
+</div>
+
+
+
+<!-- FORM DAT HANG -->
+
+<div id="datHang" style="display: none;">
+
+    <h2>Thong tin dat hang</h2>
+
+    <p>So dien thoai:</p>
+
+    <input
+        type="tel"
+        id="soDienThoai"
+        placeholder="Nhap so dien thoai"
+    >
+
+    <p>Dia chi:</p>
+
+    <textarea
+        id="diaChi"
+        placeholder="Nhap dia chi"
+    ></textarea>
+
+    <p>Phuong thuc thanh toan:</p>
+
+    <select
+        id="thanhToan"
+        onchange="chonThanhToan()"
+    >
+
+        <option value="">
+            -- Chon phuong thuc --
+        </option>
+
+        <option value="tienmat">
+            Tra tien mat
+        </option>
+
+        <option value="chuyenkhoan">
+            Chuyen khoan
+        </option>
+
+    </select>
+
+
+    <!-- CHUYEN KHOAN -->
+
+    <div
+        id="chuyenKhoan"
+        style="display: none;"
+    >
+
+        <p>So tai khoan:</p>
+
+        <h3>0123456789</h3>
+
+        <p>Ngan hang: ngan hang xuan lam</p>
+
+        <button onclick="xacNhan()">
+            OK
+        </button>
+
+    </div>
+
+
+    <!-- TIEN MAT -->
+
+    <div
+        id="tienMat"
+        style="display: none;"
+    >
+
+        <button onclick="xacNhan()">
+            OK
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<!-- LOI CAM ON -->
+
+<div
+    id="loiCamOn"
+    style="display: none;"
+>
+
+    Cam on ban da ung ho shop cua toi ❤️
+
+</div>
+
+
+
+<script>
+
+function moDatHang() {
+
+    document.getElementById("datHang").style.display = "block";
+
+}
+
+
+function chonThanhToan() {
+
+    let phuongThuc =
+        document.getElementById("thanhToan").value;
+
+    document.getElementById("chuyenKhoan").style.display = "none";
+
+    document.getElementById("tienMat").style.display = "none";
+
+
+    if (phuongThuc == "chuyenkhoan") {
+
+        document.getElementById("chuyenKhoan").style.display = "block";
+
+    }
+
+
+    if (phuongThuc == "tienmat") {
+
+        document.getElementById("tienMat").style.display = "block";
+
+    }
+
+}
+
+
+function xacNhan() {
+
+    let soDienThoai =
+        document.getElementById("soDienThoai").value;
+
+    let diaChi =
+        document.getElementById("diaChi").value;
+
+
+    if (soDienThoai == "" || diaChi == "") {
+
+        alert("Vui long nhap so dien thoai va dia chi!");
+
+        return;
+
+    }
+
+
+    document.getElementById("datHang").style.display = "none";
+
+    document.getElementById("loiCamOn").style.display = "block";
+
+}
+
+</script>
+
+
+</body>
+</html>
+```
+
